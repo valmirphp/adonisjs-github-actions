@@ -1,7 +1,7 @@
-'use strict'
+'use strict';
 
 /** @type {import('@adonisjs/framework/src/Env')} */
-const Env = use('Env')
+// const Env = use('Env');
 
 module.exports = {
   /*
@@ -28,7 +28,7 @@ module.exports = {
   |
   */
   session: {
-    serializer: 'lucid',
+    serializer: 'LucidMongo',
     model: 'App/Models/User',
     scheme: 'session',
     uid: 'email',
@@ -49,7 +49,7 @@ module.exports = {
   |
   */
   basic: {
-    serializer: 'lucid',
+    serializer: 'LucidMongo',
     model: 'App/Models/User',
     scheme: 'basic',
     uid: 'email',
@@ -66,13 +66,15 @@ module.exports = {
   |
   */
   jwt: {
-    serializer: 'lucid',
+    serializer: 'LucidMongo',
     model: 'App/Models/User',
+    token: 'App/Models/Token',
     scheme: 'jwt',
     uid: 'email',
     password: 'password',
     options: {
-      secret: Env.get('APP_KEY')
+      secret: 'self::app.appKey',
+      expiresIn: '30m'
     }
   },
 
@@ -85,10 +87,12 @@ module.exports = {
   |
   */
   api: {
-    serializer: 'lucid',
-    model: 'App/Models/User',
+    serializer: 'LucidMongo',
     scheme: 'api',
-    uid: 'email',
-    password: 'password'
+    model: 'App/Models/User',
+    token: 'App/Models/Token',
+    uid: 'username',
+    password: '',
+    expiry: '30d'
   }
-}
+};

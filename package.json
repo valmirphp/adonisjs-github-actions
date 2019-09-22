@@ -5,7 +5,7 @@
   "description": "The fullstack application boilerplate for Adonisjs",
   "main": "index.js",
   "scripts": {
-    "dev": "DEBUG=mquery adonis serve -dev",
+    "dev": "DEBUG=mquery adonis serve --dev",
     "dev-test": " DEBUG=mquery adonis test",
     "start": "node server.js",
     "test": "node ace test",
@@ -31,7 +31,8 @@
     "@adonisjs/lucid": "^6.1.3",
     "@adonisjs/session": "^1.0.27",
     "@adonisjs/shield": "^1.0.8",
-    "@adonisjs/vow": "^1.0.17"
+    "@adonisjs/vow": "^1.0.17",
+    "lucid-mongo": "^3.1.6"
   },
   "devDependencies": {
     "commitizen": "^4.0.3",
