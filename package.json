@@ -5,8 +5,13 @@
   "description": "The fullstack application boilerplate for Adonisjs",
   "main": "index.js",
   "scripts": {
+    "dev": "DEBUG=mquery adonis serve -dev",
+    "dev-test": " DEBUG=mquery adonis test",
     "start": "node server.js",
-    "test": "node ace test"
+    "test": "node ace test",
+    "lint": "eslint app/**/*.js config/**/*.js database/**/*.js start/**/*.js test/**/*.js",
+    "lint-fix": "eslint app/**/*.js config/**/*.js database/**/*.js start/**/*.js test/**/*.js --fix",
+    "commit": "git-cz"
   },
   "keywords": [
     "adonisjs",
@@ -27,7 +32,16 @@
     "@adonisjs/session": "^1.0.27",
     "@adonisjs/shield": "^1.0.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "commitizen": "^4.0.3",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.18.2"
+  },
   "autoload": {
     "App": "./app"
   }
