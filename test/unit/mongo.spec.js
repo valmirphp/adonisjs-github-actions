@@ -6,8 +6,8 @@ const { test, after } = use('Test/Suite')('Mongo');
 const User = use('App/Models/User');
 
 after(function(done) {
-  this.enableTimeouts(false);
-  //  this.timeout(10000);
+  // this.enableTimeouts(false);
+  this.timeout(10000);
 
   User.query()
     .delete()
