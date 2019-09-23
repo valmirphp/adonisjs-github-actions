@@ -12,6 +12,7 @@ jobs:
         uses: ./.github/actions/mongodb
       - name: Install adonis
         uses: ./.github/actions/config-adonisjs
+      - name: Adonis testing
         run: adonis test
         env:
           CI: true
