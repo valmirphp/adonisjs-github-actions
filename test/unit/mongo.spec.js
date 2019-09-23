@@ -9,12 +9,12 @@ async function deleteMongoCollection(collection) {
   return Promise.all(promises);
 }
 
-const { test, after } = use('Test/Suite')('Mongo');
+const { test, afterEach } = use('Test/Suite')('Mongo');
 
 // const Config = use('Config');
 const User = use('App/Models/User');
 
-after(() => {
+afterEach(() => {
   return deleteMongoCollection('users');
 });
 
