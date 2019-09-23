@@ -12,7 +12,7 @@ cp .env.example .env
 adonis key:generate
 
 # Run tasks
-yarn lint
-yarn test
+#yarn lint
+#yarn test
 
 echo '👍 GREAT SUCCESS!'

@@ -1,10 +1,17 @@
 name: AdonisJs Workflow
+
 on: push
 
 jobs:
-  build:
-    name: AdonisJs Build
+  testing:
+    name: AdonisJs testing
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v1
+      - uses: ./.github/actions/mongodb
       - uses: ./.github/actions/config-adonisjs
+    run: |
+      cp .env.example .env
+      yarn install
+      yarn lint
+      yarn test
