@@ -10,8 +10,6 @@ jobs:
       - uses: actions/checkout@v1
       - uses: ./.github/actions/mongodb
       - uses: ./.github/actions/config-adonisjs
-    run: |
-      cp .env.example .env
-      yarn install
-      yarn lint
-      yarn test
+      run: |
+        yarn lint
+        yarn test
