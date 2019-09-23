@@ -15,5 +15,11 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route');
+const User = use('App/Models/User');
+
+Route.get('/demo', async () => {
+  const users = await User.fetch();
+  return users.toJSON();
+});
 
 Route.on('/').render('welcome');

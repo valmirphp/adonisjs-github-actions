@@ -1,6 +1,6 @@
 name: Yarn Workflow
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -13,14 +13,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - uses: ./.github/actions/mongodb
+    - uses: ./.github/actions/config-adonisjs
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: yarn install, lint, and test
-      run: |
-        yarn install
-        yarn lint
-        yarn test
+    - name: EsLint
+      run: yarn lint
+    - name: Testing
+      run: yarn test
       env:
         CI: true
