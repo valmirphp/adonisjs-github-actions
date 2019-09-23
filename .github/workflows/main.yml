@@ -13,6 +13,8 @@ jobs:
       - name: Install AdonisJs
         uses: ./.github/actions/config-adonisjs
       - name: Init testing
-        run: node ace test
+        run: |
+          docker ps
+          node ace test
         env:
           CI: true
