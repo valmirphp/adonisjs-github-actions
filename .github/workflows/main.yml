@@ -10,6 +10,6 @@ jobs:
       - uses: actions/checkout@v1
       - uses: ./.github/actions/mongodb
       - uses: ./.github/actions/config-adonisjs
-      - run: adonis test
+        run: adonis test
       env:
         CI: true
