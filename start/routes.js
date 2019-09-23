@@ -17,8 +17,8 @@
 const Route = use('Route');
 const User = use('App/Models/User');
 
-Route.get('/demo', async function () {
-  const users = await User.fetch()
+Route.get('/demo', async () => {
+  const users = await User.fetch();
   return users.toJSON();
 });
 
