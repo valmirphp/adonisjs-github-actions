@@ -1,20 +1,21 @@
 'use strict';
 
-const {test, after} = use('Test/Suite')('Mongo');
+const { test, after } = use('Test/Suite')('Mongo');
 
 const Config = use('Config');
 const User = use('App/Models/User');
 
-after(async (done) => {
-  User.query().delete()
+after(async done => {
+  User.query()
+    .delete()
     .then(() => done())
-    .catch((e) => {
+    .catch(e => {
       console.error('ERROR:', e);
       done();
     });
 });
 
-test('Test Create user', async ({assert}) => {
+test('Test Create user', async ({ assert }) => {
   console.log(
     'CONFIG====>',
     Config.get('database.connection'),
