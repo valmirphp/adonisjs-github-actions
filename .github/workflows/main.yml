@@ -15,6 +15,6 @@ jobs:
       - name: Init testing
         run: |
           docker ps
-          node ace test
+          yarn test
         env:
           CI: true
