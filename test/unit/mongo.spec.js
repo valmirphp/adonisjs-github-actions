@@ -19,9 +19,11 @@ test('Test Create user', async ({ assert }) => {
   const countBefore = await User.count();
   assert.isNull(countBefore);
 
-  await User.create({
+  const user = await User.create({
     email: 'admin@admin.com'
   });
+
+  console.log('CREATED USER', user._id);
 
   const countAfter = await User.count();
   assert.equal(1, countAfter);
