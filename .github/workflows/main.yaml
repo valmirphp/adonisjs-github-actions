@@ -7,11 +7,15 @@ jobs:
     name: AdonisJs testing
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v1
-      - uses: ./.github/actions/mongodb
-      - uses: ./.github/actions/config-adonisjs
-        run: |
-          yarn lint
-          adonis test
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: mongodb
+        uses: ./.github/actions/mongodb
+      - name: Adonis
+        uses: ./.github/actions/config-adonisjs
+      - name: Init lint
+        run: yarn lint
+      - name: Init testing
+        run: adonis test
       env:
         CI: true
