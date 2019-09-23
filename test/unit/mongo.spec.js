@@ -5,7 +5,9 @@ const { test, after } = use('Test/Suite')('Mongo');
 const Config = use('Config');
 const User = use('App/Models/User');
 
-after(async done => {
+after(function(done) {
+  this.enableTimeouts(false);
+
   User.query()
     .delete()
     .then(() => done())
