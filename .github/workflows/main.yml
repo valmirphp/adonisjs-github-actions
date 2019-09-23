@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v1
-      - name: Install mongo
+      - name: Install mongodb
         uses: ./.github/actions/mongodb
-      - name: Install adonis
+      - name: Install AdonisJs
         uses: ./.github/actions/config-adonisjs
-      - name: Adonis testing
-        run: adonis test
+      - name: Init testing
+        run: node ace test
         env:
           CI: true
