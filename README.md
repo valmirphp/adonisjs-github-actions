@@ -1,3 +1,5 @@
+<p><img src="https://github.com/valmirphp/adonisjs-github-actions/workflows/AdonisJs%20Workflow/badge.svg"></p>
+
 # Adonis fullstack application
 
 This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
