@@ -6,7 +6,7 @@ const Config = use('Config');
 const User = use('App/Models/User');
 
 after(async () => {
-  return User.query().delete();
+  await User.query().delete();
 });
 
 test('Test Create user', async ({ assert }) => {
