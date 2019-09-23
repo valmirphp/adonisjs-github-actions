@@ -10,8 +10,9 @@ jobs:
       - uses: actions/checkout@v1
       - uses: ./.github/actions/mongodb
       - uses: ./.github/actions/config-adonisjs
+      - name: Init Lint
+        run: yarn lint
       - name: Init testing
-      - run: yarn lint
-      - run: adonis test
+        run: adonis test
       env:
         CI: true
