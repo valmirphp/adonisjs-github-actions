@@ -2,11 +2,12 @@
 
 const { test, after } = use('Test/Suite')('Mongo');
 
-const Config = use('Config');
+// const Config = use('Config');
 const User = use('App/Models/User');
 
 after(function(done) {
   this.enableTimeouts(false);
+  //  this.timeout(10000);
 
   User.query()
     .delete()
@@ -18,11 +19,11 @@ after(function(done) {
 });
 
 test('Test Create user', async ({ assert }) => {
-  console.log(
-    'CONFIG====>',
-    Config.get('database.connection'),
-    Config.get('database.mongodb')
-  );
+  // console.log(
+  //   'CONFIG====>',
+  //   Config.get('database.connection'),
+  //   Config.get('database.mongodb')
+  // );
 
   const countBefore = await User.count();
   assert.isNull(countBefore);
