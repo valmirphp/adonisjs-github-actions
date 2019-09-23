@@ -13,6 +13,6 @@ adonis key:generate
 
 # Run tasks
 #yarn lint
-#yarn test
+yarn test
 
 echo '👍 GREAT SUCCESS!'
