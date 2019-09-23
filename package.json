@@ -32,7 +32,8 @@
     "@adonisjs/session": "^1.0.27",
     "@adonisjs/shield": "^1.0.8",
     "@adonisjs/vow": "^1.0.17",
-    "lucid-mongo": "^3.1.6"
+    "lucid-mongo": "^3.1.6",
+    "mongodb-core": "^3.2.7"
   },
   "devDependencies": {
     "commitizen": "^4.0.3",

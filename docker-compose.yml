@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  server:
+    container_name: ADONISJS_SERVER_V2
+    build:
+      context: ./
+      dockerfile: .docker/app/Dockerfile
+#    build: '.docker/app'
+    volumes:
+      - ./:/node-app
+      - /node-app/node_modules
+    environment:
+      NODE_ENV: development
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - '3334:3333'
+
+  db:
+    image: 'mongo'
+    container_name: ADONISJS_MONGODB_V2
+    environment:
+#      MONGO_INITDB_DATABASE: adonisjs
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 1234
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data/db:/data/db
