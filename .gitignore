@@ -15,4 +15,6 @@ database/development.sqlite
 .history
 .idea
 
+
+# Mongo DB data
 data
